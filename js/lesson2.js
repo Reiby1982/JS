@@ -191,7 +191,7 @@ console.log(" ");
 /*
 for (start; condition; step) {
 	//code;
-	//whole condition == true
+	//while condition == true
 }
 */
 for (var j=0; j<arr.length; j++) {
