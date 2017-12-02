@@ -11,7 +11,7 @@ console.log("Тарелок, шт = ", varPlate);
 console.log("Моющего средства, мл = ", varDetergent);
 console.log(" ");
 
-while(varPlate>0 && varDetergent>0) {
+while(varPlate && varDetergent) {
 	varPlate--;
 	varDetergent= varDetergent-0.5;
 	console.log("Тарелок осталось, шт",varPlate);
@@ -70,8 +70,26 @@ console.log('новый массив',arrConcat2);
 Есть три вершины. Координаты вершин (x1, x2), (y1, y2), (z1, z2) заданы как целые числа. Нужно определить - является ли треугольник с заданными координатами прямоугольным.
 В решении использовать только математические и логические операторы. Результат в консоль.
 Обязательное условие: все вычисления производить только с целыми числами. Любой переход в дробные числа запрещен!*/
+
 console.log(" ");
 console.log("Задача 4");
+let Xa=0, Ya = 0, Xb = 5, Yb = 3, Xc = 5, Yc = 0;
+console.log("Координаты точки A",Xa, Ya);  
+console.log("Координаты точки B",Xb, Yb);  
+console.log("Координаты точки C",Xc, Yc);  
+//  квадраты сторон по формуле (X2-X1)²+(Y2-Y1)²
+let ab = (Xb - Xa) * (Xb - Xa) + (Yb - Ya) * (Yb - Ya);
+let bc = (Xb - Xc) * (Xb - Xc) + (Yb - Yc) * (Yb - Yc);
+let ac = (Xc - Xa) * (Xc - Xa) + (Yc - Ya) * (Yc - Ya);
+console.log("Сторона AB² равна",ab);  
+console.log("Сторона BC² равна",bc);  
+console.log("Сторона AC² равна",ac);
+if (ab==bc + ac || bc==ab + ac || ac == bc + ab){
+    console.log("Треугольник   прямоугольный");
+} else {
+    console.log("Треугольник  не прямоугольный");
+}
+
 
 /*Задача 5
 Создать массив из чисел. Выполнить сортировку массива по возрастанию методом пузырька. Запрещено использовать стандартные методы.*/
@@ -79,5 +97,24 @@ console.log(" ");
 console.log("Задача 5");
 var arrBubble = [3, 4, 23, 5634, 32, 12, 10, 11, 7, 34];
 console.log("Заданный массив", arrBubble);
-let varN = arrBubble.length-1;
+let varN = arrBubble.length;
+console.log("Длина массива", varN);
+
+let i, j, temp;
+
+for (i = 0; i < varN - 1; i++) {
+    for (j = 0; j < varN - i; j++) {
+ 
+        if( arrBubble[j] > arrBubble[j+1] ){
+            temp = arrBubble[j];
+            arrBubble[j] = arrBubble[j+1];
+            arrBubble[j+1] = temp;
+        }
+    }
+}
+
+console.log (arrBubble);
+document.write(arrBubble);
+
+
 
