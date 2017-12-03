@@ -84,7 +84,7 @@ let ac = (Xc - Xa) * (Xc - Xa) + (Yc - Ya) * (Yc - Ya);
 console.log("Сторона AB² равна",ab);  
 console.log("Сторона BC² равна",bc);  
 console.log("Сторона AC² равна",ac);
-if (ab==bc + ac || bc==ab + ac || ac == bc + ab){
+if (ab===bc + ac || bc===ab + ac || ac === bc + ab){
     console.log("Треугольник   прямоугольный");
 } else {
     console.log("Треугольник  не прямоугольный");
