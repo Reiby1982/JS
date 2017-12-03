@@ -1,4 +1,3 @@
-// Массивы 
 // 'use strict';
 console.log("Functions Функции");
 // функции являются объектами в javaScript
