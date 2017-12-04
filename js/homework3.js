@@ -88,14 +88,28 @@ function recursion(N) {
        return N; 
     }
     else {
-      return N%10 + Math.round(recursion(N/10));   
+      return N%10 + Math.floor (recursion(N/10));   
     }
 }
 
-console.log(recursion(1234));
+console.log(recursion(1234567));
 
 /*Задача 3.
 (на замыкание)
 Написать функцию, которая возвращает новую функцию, которая увеличивает/уменьшает
 переданное число на указанный при карировании шаг.*/
+console.log("");
+console.log("Задача 3");
+   let x = 5, y=4;
+
+    function curry(x) {
+        return function (y) {
+            return x + y;
+        };
+    }
+    
+    console.log(curry(4)); 
+    
+
+    
 
