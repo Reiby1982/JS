@@ -104,12 +104,14 @@ console.log("Задача 3");
 
     function curry(x) {
         return function (y) {
-            return x + y;
+            return (x + y);
         };
     }
     
-    console.log(curry(4)); 
-    
-
+var inc = curry(1);
+console.log(inc(5)); // 6
+ 
+var dec = curry(-1);
+console.log(dec(3)); // 2
     
 
