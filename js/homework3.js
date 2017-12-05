@@ -5,8 +5,8 @@
 */
 console.log("");
 console.log("Задача 1");
-let a = 4, b = 1, operator = "/";
-console.log("a =", a, "b =", b, "Operator", operator);
+// let a = 4, b = 1, operator = "/";
+// console.log("a =", a, "b =", b, "Operator", operator);
 
 // Функция проверки чисел 
 function checkType(a, b) {
@@ -48,35 +48,37 @@ function Division(a, b) {
 }
 }
 
+function calc(a, b, operator) {
+    if (checkTypeOperator(operator)) {
+        switch(operator) {
+            case "+":
+            Summ(a, b);
+            break; 
+            case "-":
+            Subtraction(a, b);
+            break;
+            case "*":
+            Multiplication(a, b);
+            break;
+            case "/":
+            if (b==0) {
+            console.log("Товарищ, не дели на 0!")
+            } else {
+            Division(a, b);
+            break; 
+            };
+        break;
+        }
 
-if (checkType || checkTypeOperator) {   
-    switch(operator) {
-        case "+":
-                Summ(a, b);
-                break; 
-        case "-":
-                Subtraction(a, b);
-                break;
-        case "*":
-                Multiplication(a, b);
-                break;
-        case "/":
-                if (b==0) {
-                    console.log("Товарищ, не дели на 0!")
-                } else {
-                 Division(a, b);
-                break;   
-                };
-                break;
-        default:
-                console.log("Введите корректный оператор");
-                break;
-    }
-} else {
+    } else {
     console.log("Введите корректные данные")
+    }
 }
 
 
+let res = calc(10, 5, "/");
+
+    
 /*Задача 2
  Дано целое число n. Вычислите сумму его цифр.
   Использовать только рекурсию.*/
