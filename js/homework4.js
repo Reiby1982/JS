@@ -10,13 +10,16 @@ console.log("1.1");
 let city1 = {};
 city1.name = "City1";
 city1.mayor = "Mayor1";
-city1.population = "100";
+city1.population = 100;
 
 
 let city2 = {
 	name: "City2",
-	population: "500",
+	population: 500,
 	mayor: "Mayor2",
+	changeName: function (new_name) {
+		this.name = new_name;
+	}
 }
 console.log(city1);
 console.log(city2);
@@ -24,12 +27,11 @@ console.log(city2);
 /*1.2. city1 добавить метод, который позволяет забирать какую-то часть населения 
 city2 (и соответственно добавлять к своему)*/
 console.log("1.2");
-let X=50;
 city1 = {
 	population: "100",
 	get: function(X) {
-		 this.population = +this.population + X;
-		 city2.population=+city2.population-X;
+		 this.population = this.population + X;
+		 city2.population= city2.population - X;
 	}
 
 };
@@ -54,6 +56,35 @@ function Mayor(City) {
 
 console.log(Mayor(city1));
 
+console.log("1.3.2");
+//Правильнее сделать так
+function ShowName(some_city) {
+	console.log(some_city.mayor);
+}
+ShowName(city1);
+
+function ShowName2() {
+	console.log(this.mayor);
+}
+
+ShowName2.call(city1, ); // Вызов! функции с передачей контекстаы
+ShowName2.apply(city2);
+
+function changeMayor(new_val) {
+	this.mayor = new_val;
+	console.log(this.mayor)
+}
+changeMayor.call(city1, "New Name" ); // Вызов функции с передачей контекстаы
+changeMayor.apply(city2, ["New_name"]);
+
+// Привязка контекста с помощью bind
+var changeCity1 = changeMayor.bind(city1, "New Name"); // функция должна быть создана и иметь this!
+var changeCity2 = changeMayor.bind(city1, "New Name"); // функция должна быть создана и иметь this!
+
+changeCity1();
+changeCity2();
+
+
 /*1.4. Создать объект president c методом changeCountryMayor(), благодаря 
 которому он сможет менять мэра города (в зависимости от объекта, переданного 
 в качестве аргумента)*/
@@ -68,14 +99,32 @@ let president = {
 };
 president.changeCountryMayor(city2, "Mayor1");
 president.changeCountryMayor(city1, "Mayor2");
+
 console.log("City1 - ", city1.mayor);
-console.log("City1 - ", city2.mayor);
+console.log("City2 - ", city2.mayor);
+
+
 
 /*Задание 2
 Написать функцию, которая на вход принимает строку и подстроку и ищет 
 ВСЕ вхождения подстроки в строку*/
+console.log("Задача 2");
 
-
+var str = "sdfsdsdfsgaasdfdf";
+var substr = "a";
+function searching(str, substr) {
+	var position = 0;
+	var n = 0;
+	while(true) {
+		var foundPosition = str.indexOf(substr, position);
+		if (foundPosition == -1) break;
+		position = foundPosition +1;
+		n++;
+		console.log(foundPosition);
+	}
+	return n;
+}
+console.log(searching(str,substr));
 /*
 Задание 3 (по рядам, нумерация от окна)
 1 ряд: написать функцию getDataFromUser(), которая:
