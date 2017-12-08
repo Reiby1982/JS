@@ -40,7 +40,9 @@
 	div.innerHTML = "<p>TEXT</p>"; // можно вставить текст в обхект
 
 	//созднание элемента
+
 	var pElem = document.createElement("img");
 	pElem.setAttribute("src","alt");
-	div.appandChild(pElem);
+	
+	// div.appandChild(pElem);
 }());
