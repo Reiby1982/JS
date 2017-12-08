@@ -57,6 +57,7 @@ function Mayor(City) {
 console.log(Mayor(city1));
 
 console.log("1.3.2");
+
 //Правильнее сделать так
 function ShowName(some_city) {
 	console.log(some_city.mayor);
@@ -67,7 +68,7 @@ function ShowName2() {
 	console.log(this.mayor);
 }
 
-ShowName2.call(city1, ); // Вызов! функции с передачей контекстаы
+ShowName2.call(city1, ); // Вызов! функции с передачей контекста
 ShowName2.apply(city2);
 
 function changeMayor(new_val) {
