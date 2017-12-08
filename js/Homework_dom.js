@@ -12,11 +12,12 @@ let slider = {
 			},
 	add: function(scr, alt) {
 				this.Elem = document.createElement("img");
+				this.Elem.setAttribute("scr", "alt")
 	}
 }
 slider.init("Homework1");
 console.log(Elem);
-slider.add();
+slider.add("img/1.jpg", "img");
 
 
 }());
