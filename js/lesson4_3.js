@@ -84,8 +84,16 @@
 	};
 	user.introdusing();
 
+	// Чтобы перебрать свойства объекта
+	var obj = {
+		name: "obj name",
+		id: "12",
+	}
 
-
+	// for (key in obj)
+	for (var key in obj) {
+		console.log(key, obj[key]);
+	}
 
 
 

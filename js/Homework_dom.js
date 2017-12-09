@@ -8,16 +8,66 @@
 let Elem;
 let slider = {
 	init: function(id) {
-			return Elem = document.getElementById(id);
+			this.elem = document.getElementById(id); //создаем свойство, которое потом используем
 			},
-	add: function(scr, alt) {
-				this.Elem = document.createElement("img");
-				this.Elem.setAttribute("scr", "alt")
+	add: function(url, alt) {
+				var img = document.createElement("img");
+				img.setAttribute("src",url);
+				img.setAttribute("alt",alt);// имя и значение
+				this.elem.appendChild(img);//добавляем созданный элемент в найденный контейнер
+				img.style.height = "100px";
+				// this.Elem.className+="";
+				// this.Elem.classList.add();
 	}
-}
-slider.init("Homework1");
-console.log(Elem);
-slider.add("img/1.jpg", "img");
+};
+slider.init("slider");
+slider.add("img/1.jpg", "alt txt");
+slider.add("", "alt txt ");
+slider.add("", "alt2 txt ");
+slider.add("", "alt3 txt ");
+
+
+// Создание формы. Урок 6
+// Родитель для формы
+var formContainer = document.getElementById("form");// нашел элемент и записал в переменную
+// формы
+var form = document.createElement("form");
+	form.setAttribute("id", "form id");
+	form.setAttribute("action", "#");
+	form.setAttribute("method", "post");
+// input 
+var input1 = document.createElement("input");
+	input1.setAttribute("type", "text");
+	input1.setAttribute("required", true);
+	input1.setAttribute("id", "input_id"); // имя атрибута и его значение
+
+var input2 = document.createElement("input");
+	input2.setAttribute("type", "text");
+	input2.setAttribute("required", true);
+
+//Checkbox
+var check = document.createElement("input");
+	check.setAttribute("type", "checkbox");
+	check.cheked = false;
+//button
+var btn = document.createElement("button");
+	btn.setAttribute("value", "btn");
+
+// добавление элементов в форму
+form.appendChild(input1);
+form.appendChild(input2);
+form.appendChild(check);
+form.appendChild(btn);
+
+//добавление формы в контейнер
+formContainer.appendChild(form);
+
+// Получение значений от пользователя
+var input_val = document.getElementById("input_id").value;
+console.log("input_val", input_val);
+
+
+
 
 
 }());
