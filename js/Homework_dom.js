@@ -39,7 +39,7 @@ var form = document.createElement("form");
 var input1 = document.createElement("input");
 	input1.setAttribute("type", "text");
 	input1.setAttribute("required", true);
-	input1.setAttribute("id", "input_id"); // имя атрибута и его значение
+	// input1.setAttribute("id", "input_id"); // имя атрибута и его значение
 
 var input2 = document.createElement("input");
 	input2.setAttribute("type", "text");
@@ -66,7 +66,32 @@ formContainer.appendChild(form);
 var input_val = document.getElementById("input_id").value;
 console.log("input_val", input_val);
 
+//События, чтобы отловиь событие нужно на него повесить обработчик событий 
+var click = document.getElementById("click");
 
+
+click.addEventListener("click", showClickElem);// имя события мыши contexmenu | dblclick | mousedown кнопка нажата 
+// | mouseup кнопка отпущена| mouseover | mouseout | mousemove
+
+
+function showClickElem(){
+	console.log("click", document.getElementById("input_id").value);
+}
+
+// Чтобы удалить обработчик
+// click.removeEventListener("click", showClickElem);
+
+//Двойной щелчек
+click.addEventListener("dblclick", dblClickInfo);
+	function dblClickInfo(event) {
+	event.preventDefault(); //Отменяет события по умолчанию (двойной щелчок - выделение текста), события ФОРМЫ, не дают отправить
+	console.log("dblclick", this);
+}
+
+document.getElementById("mousemove").addEventListener("mousemove", mouseMoveInfo);
+	function mouseMoveInfo(event) {
+	console.log("mouseMoveInfo", event.clientX, event.clientY);
+}
 
 
 
