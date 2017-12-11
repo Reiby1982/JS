@@ -88,10 +88,10 @@ click.addEventListener("dblclick", dblClickInfo);
 	console.log("dblclick", this);
 }
 
-document.getElementById("mousemove").addEventListener("mousemove", mouseMoveInfo);
-	function mouseMoveInfo(event) {
-	console.log("mouseMoveInfo", event.clientX, event.clientY);
-}
+// document.getElementById("mousemove").addEventListener("mousemove", mouseMoveInfo);
+// 	function mouseMoveInfo(event) {
+// 	console.log("mouseMoveInfo", event.clientX, event.clientY);
+// }
 
 
 
