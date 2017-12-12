@@ -18,27 +18,52 @@ erase
 
 (function() {
 	'use strict';
+
+
+let canvas = document.getElementById("canvas");
+
 let handlers = {
 	startDraw: function() {
-		console.log("startDraw");
+		console.log("начало рисования");
+		this.isDrawing = true;
 	},
 	endDraw: function() {
-		console.log("endDraw");
+		console.log("конец рисования");
+		this.isDrawing = false;
 	},
-	drawing: function() {
-		console.log("drawing");
+	drawing: function(event) {
+		if (this.isDrawing) {
+			console.log("рисование в процессе");
+
+			var context = canvas.getContext('2d'); // задание координатной сетки x и y
+			context.beginPath(); // начать рисование
+			// contex.fillStyle() рисование заливкой
+			context.strokeStyle = document.getElementById('paint_brush_color').value; //рисование контуром
+			context.arc(event.offsetX, event.offsetY, 
+					document.getElementById('paint_brush_size').value,
+					0, Math.PI*2, false);
+			context.stroke();
+
+
+		} else {
+			return;
+		}
 	},
 	erase: function () {
-		console.log("erase");
+		console.log("стираиние");
 	},
 };
 
-let canvas = document.getElementById("canvas");
 
 	canvas.addEventListener('mousedown', handlers.startDraw);
 	canvas.addEventListener('mouseup', handlers.endDraw);
 	canvas.addEventListener('mouseout', handlers.endDraw);
-	canvas.addEventListener('mousemove', handlers.drawing);;
+	canvas.addEventListener('mousemove', handlers.drawing);
 
+	// получить координаты мыши 
+	elem.getBoundingClientRect() {
+		"top" :;
+		'bottom':;
+	}
 
 }());
