@@ -37,12 +37,14 @@ let handlers = {
 
 			var context = canvas.getContext('2d'); // задание координатной сетки x и y
 			context.beginPath(); // начать рисование
+            
+            //context.strokeStyle рисование контуром
 			// contex.fillStyle() рисование заливкой
-			context.strokeStyle = document.getElementById('paint_brush_color').value; //рисование контуром
+			context.fillStyle = document.getElementById('paint_brush_color').value; //рисование контуром
 			context.arc(event.offsetX, event.offsetY, 
 					document.getElementById('paint_brush_size').value,
 					0, Math.PI*2, false);
-			context.stroke();
+			context.fill();
 
 
 		} else {
@@ -60,10 +62,10 @@ let handlers = {
 	canvas.addEventListener('mouseout', handlers.endDraw);
 	canvas.addEventListener('mousemove', handlers.drawing);
 
-	// получить координаты мыши 
-	elem.getBoundingClientRect() {
-		"top" :;
-		'bottom':;
-	}
+	// // получить координаты мыши 
+	// elem.getBoundingClientRect() {
+	// 	"top" :;
+	// 	'bottom':;
+	// }
 
 }());
