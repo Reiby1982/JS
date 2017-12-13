@@ -21,6 +21,7 @@ erase
 
 
 let canvas = document.getElementById("canvas");
+let erase = document.getElementById("paint_eraser");  
 
 let handlers = {
 	startDraw: function() {
@@ -40,7 +41,7 @@ let handlers = {
             
             //context.strokeStyle рисование контуром
 			// contex.fillStyle() рисование заливкой
-			context.fillStyle = document.getElementById('paint_brush_color').value; //рисование контуром
+			context.fillStyle = document.getElementById('paint_brush_color').value;
 			context.arc(event.offsetX, event.offsetY, 
 					document.getElementById('paint_brush_size').value,
 					0, Math.PI*2, false);
@@ -52,7 +53,15 @@ let handlers = {
 		}
 	},
 	erase: function () {
-		console.log("стираиние");
+		console.log("стирание");
+        var context = canvas.getContext('2d');
+			context.beginPath();
+			context.fillStyle = document.getElementById('paint_brush_color').value =  '#ffffff';
+			context.arc(event.offsetX, event.offsetY, 
+					document.getElementById('paint_brush_size').value ,
+					0, Math.PI*2, false);
+			context.fill();
+        
 	},
 };
 
@@ -61,6 +70,7 @@ let handlers = {
 	canvas.addEventListener('mouseup', handlers.endDraw);
 	canvas.addEventListener('mouseout', handlers.endDraw);
 	canvas.addEventListener('mousemove', handlers.drawing);
+    erase.addEventListener('click', handlers.erase);
 
 	// // получить координаты мыши 
 	// elem.getBoundingClientRect() {
