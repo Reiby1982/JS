@@ -1,5 +1,5 @@
 (function() {
-	'use strict'
+	'use strict';
     
 console.log("");
 console.log("Farm ES6 method");
@@ -24,23 +24,25 @@ class AnimalHotel {
 		constructor() { 
 			this.animals = [];
 			this.maxCount = 3;
-        };
-    addAnimal(animal) {
-        if (this.animals.length < this.maxCount) {
-            this.animals.push(animal);
-            console.log(this.animals);
-        } else {
-            console.log("Нет свободных мест");
         }
-        };
 };
+  
+class AnimalsHotel {
+	constructor(name) {
+		this.name = name; 
+        this.animals = [];
+        this.max_count = 3;
+    }
     
-class Animal {
-	constructor() {
-		this.name = name;
-	};
-};  
-
+    addAnimals(animal) {
+        if (this.animals.length < this.max_count) {
+                this.animals.push(animal);
+                console.log(this.animals);
+            } else {
+                console.log("Нет свободных мест");
+        }    	
+    }
+};
 
 class DomasticAnimal extends Animal {
 	constructor(name) {
@@ -54,6 +56,7 @@ console.log(farm);
 
 
 var cat = new DomasticAnimal("Кошка"); 
+    
 var animalHotel = new AnimalHotel();
 
 animalHotel.addAnimals(cat); 
