@@ -1,0 +1,10 @@
+
+body {
+/*	background: linear-gradient(45deg, #EECFBA, #C5DDE8);*/*/
+	margin: 0;
+};
+wrapper {
+	margin: 0 auto;
+    padding: 0;
+    border-top: 1px solid black;
+}
