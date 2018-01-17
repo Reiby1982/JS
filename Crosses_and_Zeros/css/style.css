@@ -8,3 +8,19 @@ wrapper {
     padding: 0;
     border-top: 1px solid black;
 }
+.hidden {
+	display: none;
+}
+form {
+    margin: auto;
+    padding-left: 10px;
+    left: 50%;
+    top: 50%;
+    background: lightblue;
+    border: 1px solid lightblue;
+    border-radius: 6px;
+    width: 600px;
+    height: 190px;
+    font-style: italic;
+    font-size: 20px;
+ }

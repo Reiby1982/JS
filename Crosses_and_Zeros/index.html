@@ -5,73 +5,58 @@
 		<title>Crosses and Zeros</title>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
+	
 	<body>
-      <div class="wraper">
-       
-        <div id="start_block">
-            <div class="login">
-                <label for="login">Введите имя игрока:</label>
-                <input type="text" id="login">
-            </div>
+  
+       <form method="post">
             
-        <div id="start_block">
-            <div class="login">
-                <label for="login">Введите имя противника:</label>
-                <input type="text" id="enemy_login">
-            </div>
-            
-            <div id="field_draw">
-                
-            </div>
+            <div id="start_block">
+                <div class="login">
+                    <label for="login">Введите имя игрока:</label>
+                    <input type="text" id="login">
+                </div>
 
-<!--
-            <div class="enemy">
-                <p>Выберите противника</p>
-                <label>
-                    <input class="radio" type="radio" name="radio-enemy" checked>
-                    <span class="radio-custom"></span>
-                    <span class="label">против другого игрока</span>
-                </label>
-                <label>
-                    <input class="radio" type="radio" name="radio-enemy">
-                    <span class="radio-custom"></span>
-                    <span class="label">против компьютера</span>
-                </label>
-            </div>
--->
+            <div id="start_block">
+                <div class="login">
+                    <label for="login">Введите имя противника:</label>
+                    <input type="text" id="enemy_login">
+                </div>
 
-            <div class="board-size">
-                <p>Выберите размер поля</p>
-                <div>
+               <div id="field_draw" >  <!-- -отрисовка поля            -->
+                </div>
+
+                <div class="board-size">
+                    <p>Выберите размер поля</p>
+                    <div>
+                        <label>
+                            <input class="radio" type="radio" name="radio-size" checked>
+                            <span id="3" class="radio-custom"></span>
+                            <span class="label">3 X 3</span>
+                        </label>
+                        <label>
+                            <input class="radio" type="radio" name="radio-size">
+                            <span id="6" class="radio-custom"></span>
+                            <span class="label">6 X 6</span>
+                        </label>
+                        <label>
+                            <input class="radio" type="radio" name="radio-size">
+                            <span id="9" class="radio-custom"></span>
+                            <span class="label">9 X 9</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="start-game">
                     <label>
-                        <input class="radio" type="radio" name="radio-size" checked>
-                        <span class="radio-custom"></span>
-                        <span class="label">3 X 3</span>
-                    </label>
-                    <label>
-                        <input class="radio" type="radio" name="radio-size">
-                        <span class="radio-custom"></span>
-                        <span class="label">6 X 6</span>
-                    </label>
-                    <label>
-                        <input class="radio" type="radio" name="radio-size">
-                        <span class="radio-custom"></span>
-                        <span class="label">9 X 9</span>
+                        <input type="button" value="Новая игра" id="startbutton">
                     </label>
                 </div>
+                <div class="reset">
+                    <input type="reset" value="Сбросить" id="reset">
+                </div>            
             </div>
-
-            <div class="start-game">
-                <label>
-                    <input type="button" value="Новая игра" id="startbutton">
-                </label>
-            </div>
-            <div class="reset">
-				<input type="reset" value="Сбросить" id="reset">
-            </div>            
         </div>
-    </div>
-
+        </form>
     <script src="js/controller.js"></script>    
        
 	</body>

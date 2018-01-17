@@ -9,15 +9,16 @@ class Game {
         this.move = null;
     }
     
+    
     starGame (){
        let  player_name = 'Player';
        let enemy_name = "Enemy";
-        let field_size = '3';
+       let field_size = '3';
         
         this.player = new Player(player_name, "X");
         this.enemy = new Player(enemy_name, "0");
         this.field = new Field(field_size); // создали объекты
-        this.field.drowField(5);
+        this.field.drowField(field_size);
     }
     
     checkPlayer () {
@@ -32,7 +33,7 @@ class Game {
 
 class Player {
     constructor(name, symb) {
-         this.name = name
+        this.name = name
         this.symb = symb;
      }
 }
@@ -45,9 +46,9 @@ class Field {
          let divX = document.createElement('div');
          divX.style.height = window.innerHeight/size  + "px";
          divX.style.width = window.innerHeight/size + "px";
-        divX.style.border = "1px solid black";
-        divX.style.float = "left";
-        divX.addEventListener("click", this.addSymb.bind(this, divX));
+         divX.style.border = "1px solid black";
+         divX.style.float = "left";
+         divX.addEventListener("click", this.addSymb.bind(this, divX));
          field_draw.appendChild(divX);
     } 
        
